@@ -7,16 +7,16 @@ import IProductInstance from "./interfaces/IProductInstance";
 import ITransformedArray from "./interfaces/ITransformedArray";
 import axios, { AxiosResponse } from "axios";
 
-const USERS_API: string = 'https://fakestoreapi.com/users';
-const CARTS_API: string = 'https://fakestoreapi.com/carts';
-const PRODUCTS_API: string = 'https://fakestoreapi.com/products';
+const USERS_URL: string = 'https://fakestoreapi.com/users';
+const CARTS_URL: string = 'https://fakestoreapi.com/carts';
+const PRODUCTS_URL: string = 'https://fakestoreapi.com/products';
 
 const fetchData = async (): Promise<IFetchedData | null> => {
 
     try {
-        const usersRes: AxiosResponse<IUser[]> = await axios.get(USERS_API);
-        const cartsRes: AxiosResponse<ICart[]> = await axios.get(CARTS_API);
-        const productsRes: AxiosResponse<IProduct[]> = await axios.get(PRODUCTS_API);
+        const usersRes: AxiosResponse<IUser[]> = await axios.get(USERS_URL);
+        const cartsRes: AxiosResponse<ICart[]> = await axios.get(CARTS_URL);
+        const productsRes: AxiosResponse<IProduct[]> = await axios.get(PRODUCTS_URL);
 
         const users: IUser[] = usersRes.data;
         const carts: ICart[] = cartsRes.data;
